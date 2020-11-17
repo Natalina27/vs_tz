@@ -1,17 +1,37 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+import './App.css';
+// import {useEffect} from 'react';
+// import axios from 'axios';
+function App() {
+  // useEffect(() => {
+  //     axios({
+  //         url: 'https://pastebin.pl/view/raw/e1658aa0',
+  //         method: 'GET'
+  //             })
+  //                 .then((response) => {
+  //                     console.log('Data', response.data);
+  //                 })
+  //                 .catch('Oopps, there is an error')
+  // }, [])
+  const axios = require('axios');
+  axios.get('https://pastebin.pl/view/raw/e1658aa0')
+      .then(data => console.log(data))
+  // let componentDidMount;
+  // componentDidMount = () => {
+  //     axios({
+  //         url: 'https://pastebin.pl/view/raw/e1658aa0',
+  //         method: 'GET'
+  //     })
+  //         .then((response) => {
+  //             console.log('Data', response.data);
+  //         })
+  //         .catch('Oopps, there is an error')
+  // }
+  return (
+      <div className="App">
+        <div>
+          <h2>Welcome to my App</h2>
+        </div>
+      </div>
+  );
+}
+export default App;
